@@ -8,7 +8,7 @@
  * 
 -->
 
-# my_project:PNC_Estimate
+# My_Project:PNC_Estimate
 
 ## 1.Description
 
@@ -44,7 +44,7 @@ finalcode
 
 ## 3.File Function
 
-### 2.1 CAMS_downscale
+### 3.1 CAMS_downscale
 1. downScaleConc.m : If predictionFlag = 0 can get the pollution_trainData.csv, and if predictionFlag = 1 get 8760 hourId_pollutant_predData.bin files.
 2. preprocessing.py : Contains functions cams_train.py may used.
 3. cams_train.py : Use pollution_trainData.csv and hourId_pollutant_predData.bin files to the annual pollution high-resolution 1km grid data used machine learning methods.
@@ -52,17 +52,17 @@ finalcode
 5. CAMS_downscale_plot.ipynb : Figure plot code for pollution compares.
 6. CAMSpollutionDistribution.m : Figure plot code for DownScales pollution.
 
-### 2.2 PNC_estimate
+### 3.2 PNC_estimate
 1. swissPNCDistribution.m : The code to plot 2020_DownScale_PNC.png.
 2. PNC_estimate_plot.ipynb : The code to plot other figures.
 3. diffplot.m : The code plot diff between matflies.
 
-### 2.3 PNC_pred
+### 3.3 PNC_pred
 1.  test_pnc_model/model_test.py : DL code for pnc_pred.py.
 2.  pnc_pred.py : Get the pnc_estimate mat files.
 3.  model_train.ipynb : Train the PNC models.
 
-### 2.4 pop_PNC
+### 3.4 pop_PNC
 1. pop_data_processing.py : The functions pop_plot_final.ipynb used.
 2. pop_plot_final.ipynb : Get the population related figures.
 
