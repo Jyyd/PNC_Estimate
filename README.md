@@ -31,13 +31,13 @@ finalcode
 ├─ PNC_pred
 │  ├─ model_train.ipynb
 │  ├─ pnc_pred.py
-│  ├─ PNC_pred_plot.ipynb
+│  ├─ PNC_pred_plot.ipynb----PNC_pred_plot.zip
 │  ├─ test_pnc_model
 │  │  ├─ model_test.py
 │  └─ trained model
 ├─ pop_PNC
 │  ├─ pop_data_processing.py
-│  ├─ pop_plot_final.ipynb
+│  ├─ pop_plot_final.ipynb----pop_plot_final.zip
 └─ SI_figure
 
 ```
