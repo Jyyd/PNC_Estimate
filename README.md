@@ -48,7 +48,7 @@ finalcode
 1. downScaleConc.m : If predictionFlag = 0 can get the pollution_trainData.csv, and if predictionFlag = 1 get 8760 hourId_pollutant_predData.bin files.
 2. preprocessing.py : Contains functions cams_train.py may used.
 3. cams_train.py : Use pollution_trainData.csv and hourId_pollutant_predData.bin files to the annual pollution high-resolution 1km grid data used machine learning methods.
-4. cams_train_pred.ipynb: Get site-specific prediction results.
+4. cams_train_pred.ipynb : Get site-specific prediction results.
 5. CAMS_downscale_plot.ipynb : Figure plot code for pollution compares.
 6. CAMSpollutionDistribution.m : Figure plot code for DownScales pollution.
 
@@ -63,8 +63,8 @@ finalcode
 3.  model_train.ipynb : Train the PNC models.
 
 ### 2.4 pop_PNC
-1. pop_data_processing.py: The functions pop_plot_final.ipynb used.
-2. pop_plot_final.ipynb: Get the population related figures.
+1. pop_data_processing.py : The functions pop_plot_final.ipynb used.
+2. pop_plot_final.ipynb : Get the population related figures.
 
 
 ## 4.Software and Hardware Environment and Version
@@ -72,27 +72,27 @@ finalcode
 ### 4.1 Hardware
 
 #### 4.1.1 Computer
-+ **CPU：**Intel(R) Core(TM) i7-10750H
-+ **GPU：**NVIDIA Geforce GTX 1650 Ti
-+ **RAM：**16GB
++ **CPU**: Intel(R) Core(TM) i7-10750H
++ **GPU**: NVIDIA Geforce GTX 1650 Ti
++ **RAM**: 16GB
 
 #### 4.1.2 Workstation
-+ **CPU：**Intel(R) Xeon(R) Platinum 8383C
-+ **RAM：**256GB
++ **CPU**: Intel(R) Xeon(R) Platinum 8383C
++ **RAM**: 256GB
 
 ### 4.1 Software
 
 #### 4.2.1 Computer
-* **Operating System：**Windows 11
-* **Python Version：**Anaconda Python 3.9.7
-* **CUDA Version：**11.7
++ **Operating System**: Windows 11
++ **Python Version**: Anaconda Python 3.9.7
++ **CUDA Version**: 11.7
 
 #### 4.2.2 Workstation
-* **Operating System：**Windows 10
-* **Python Version：**Anaconda Python 3.11.4
++ **Operating System**: Windows 10
++ **Python Version**: Anaconda Python 3.11.4
 
 ### 4.3 Environment configuration commands
 
-1. ````cmd
+ ```cmd
     pip install -r requirements.txt
-    ```
+```
