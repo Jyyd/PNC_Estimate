@@ -18,15 +18,7 @@ fontsize = 20;
 diffFlag = 0;
 charLength = 1/30;
 
-% pollutants = {"NOX",  "NO2", "PM10" , "PM2.5"};
-pollutants = {"PM10"};
-cams_models = {"lgb_square"};
-% pollutants = { "NO2"};
-% cams_models = {"gbr_square"};
-% pollutants = { "NOX"};
-% cams_models = {"lgb_exp"};
-% pollutants = {"PM2.5"};
-% cams_models = {"gbr_square"};
+pollutants = {"NOX",  "NO2", "PM10" , "PM2.5"};
 %% load average
 for i = 1:length(pollutants)
     pollutant = cell2mat(cellstr(pollutants(i)));
@@ -34,8 +26,6 @@ for i = 1:length(pollutants)
         model = cell2mat(cellstr(cams_models(j)));
         % Load data for current pollutant and method
         load(['code/pncEstimator-main/src/postProcessing/matdata/pollution/2020' pollutant 'avgConc_' model '.mat']);
-%         load(['code/pncEstimator-main/src/postProcessing/matdata/pollution/2020' pollutant 'avgConc_allmean.mat']);
-%         load(['code/pncEstimator-main/src/postProcessing/matdata/pollution/2020PM10avgConc_1221.mat']);
         
         [xnew, ynew] = meshgrid(lonNew, latNew);
         Delta_x = mean(diff(lonNew));
