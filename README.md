@@ -10,9 +10,11 @@
 
 # My_Project:PNC_Estimate
 
+- For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
+
 ## 1.Description
 
-Artificial Intelligence-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles
+Machine Learning-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles
 
 ## 2.File Structure
 ```
