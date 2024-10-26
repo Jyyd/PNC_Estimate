@@ -79,11 +79,11 @@ def get_pnc_scaler():
     scaler_std = StandardScaler()
     pnc_x_all = np.vstack((pnc_x_train, pnc_x_test))
     # print('Check the pnc data nums: ', pnc_x_all.shape, pnc_x_train.shape[0], pnc_x_test.shape[0])
-    pnc_x_all_scaler = scaler_std.fit(pnc_x_all)
-    pnc_x_train = pnc_x_all_scaler.transform(pnc_x_train)
-    pnc_x_test = pnc_x_all_scaler.transform(pnc_x_test)
+    pnc_x_scalar= scaler.fit(x_train)
+    pnc_x_train = scaler.transform(x_train)
+    pnc_x_test = scaler.transform(x_test)
     # print('Load the pnc scaler!')
-    return pnc_x_all_scaler, pnc_x_train, pnc_x_test, pnc_y_train, pnc_y_test
+    return pnc_x_scaler, pnc_x_train, pnc_x_test, pnc_y_train, pnc_y_test
 
 def load_pnc_joblib(pnc_model_name:str='RandomForest'):
     '''
