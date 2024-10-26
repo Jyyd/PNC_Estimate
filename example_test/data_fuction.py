@@ -32,9 +32,10 @@ def get_train_test_data(feature_data_2016_2019, feature_data_2020):
     scaler_std = StandardScaler()
     x_all = np.vstack((x_train, x_test))
     print(x_all.shape, x_train.shape[0], x_test.shape[0])
-    x_train = scaler_std.fit_transform(x_train)
-    x_test = scaler_std.transform(x_test)
-    return x_train, y_train, x_test, y_test, scaler_std
+    x_scaler = scaler_std.fit(x_train)
+    x_train = x_scaler.transform(x_train)
+    x_test = x_scaler.transform(x_test)
+    return x_train, y_train, x_test, y_test, x_scaler
 
 
 class ModelEvaluator():    
