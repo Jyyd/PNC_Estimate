@@ -2,19 +2,19 @@
  * @Author: JYYD jyyd23@mails.tsinghua.edu.cn
  * @Date: 2024-05-08 19:46:19
  * @LastEditors: JYYD jyyd23@mails.tsinghua.edu.cn
- * @LastEditTime: 2024-05-08 20:25:37
- * @FilePath: \finalcode\README.md
+ * @LastEditTime: 2024-11-05 01:21:43
+ * @FilePath: \PNC\code\finalcode\README.md
  * @Description: 
  * 
 -->
 
-# My_Project:PNC_Estimate
+# my_project:PNC_Estimate
 
-- For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
+:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
 
 ## 1.Description
 
-Machine Learning-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles
+**Machine Learning-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles**
 
 ## 2.File Structure
 ```
@@ -33,40 +33,40 @@ finalcode
 ├─ PNC_pred
 │  ├─ model_train.ipynb
 │  ├─ pnc_pred.py
-│  ├─ PNC_pred_plot.ipynb----PNC_pred_plot.zip
+│  ├─ PNC_pred_plot.ipynb
 │  ├─ test_pnc_model
 │  │  ├─ model_test.py
 │  └─ trained model
 ├─ pop_PNC
 │  ├─ pop_data_processing.py
-│  ├─ pop_plot_final.ipynb----pop_plot_final.zip
+│  ├─ pop_plot_final.ipynb
 └─ SI_figure
 
 ```
 
 ## 3.File Function
 
-### 3.1 CAMS_downscale
+### 2.1 CAMS_downscale
 1. downScaleConc.m : If predictionFlag = 0 can get the pollution_trainData.csv, and if predictionFlag = 1 get 8760 hourId_pollutant_predData.bin files.
 2. preprocessing.py : Contains functions cams_train.py may used.
 3. cams_train.py : Use pollution_trainData.csv and hourId_pollutant_predData.bin files to the annual pollution high-resolution 1km grid data used machine learning methods.
-4. cams_train_pred.ipynb : Get site-specific prediction results.
+4. cams_train_pred.ipynb: Get site-specific prediction results.
 5. CAMS_downscale_plot.ipynb : Figure plot code for pollution compares.
 6. CAMSpollutionDistribution.m : Figure plot code for DownScales pollution.
 
-### 3.2 PNC_estimate
+### 2.2 PNC_estimate
 1. swissPNCDistribution.m : The code to plot 2020_DownScale_PNC.png.
 2. PNC_estimate_plot.ipynb : The code to plot other figures.
 3. diffplot.m : The code plot diff between matflies.
 
-### 3.3 PNC_pred
+### 2.3 PNC_pred
 1.  test_pnc_model/model_test.py : DL code for pnc_pred.py.
 2.  pnc_pred.py : Get the pnc_estimate mat files.
 3.  model_train.ipynb : Train the PNC models.
 
-### 3.4 pop_PNC
-1. pop_data_processing.py : The functions pop_plot_final.ipynb used.
-2. pop_plot_final.ipynb : Get the population related figures.
+### 2.4 pop_PNC
+1. pop_data_processing.py: The functions pop_plot_final.ipynb used.
+2. pop_plot_final.ipynb: Get the population related figures.
 
 
 ## 4.Software and Hardware Environment and Version
@@ -74,27 +74,58 @@ finalcode
 ### 4.1 Hardware
 
 #### 4.1.1 Computer
-+ **CPU**: Intel(R) Core(TM) i7-10750H
-+ **GPU**: NVIDIA Geforce GTX 1650 Ti
-+ **RAM**: 16GB
++ **CPU：**Intel(R) Core(TM) i7-10750H
++ **GPU：**NVIDIA Geforce GTX 1650 Ti
++ **RAM：**16GB
 
-#### 4.1.2 Workstation
-+ **CPU**: Intel(R) Xeon(R) Platinum 8383C
-+ **RAM**: 256GB
+#### 4.1.2 Workstation CPU
++ **CPU：**Intel(R) Xeon(R) Platinum 8383C
++ **GPU：**NVIDIA Geforce GTX 3090
++ **RAM：**256GB
+
+#### 4.1.3 Workstation GPU
++ **CPU：**Intel(R) Xeon(R) Platinum 8488C 2.40 GHz
++ **GPU：**4 x NVIDIA RTX A6000
++ **RAM：**512GB
 
 ### 4.1 Software
 
 #### 4.2.1 Computer
-+ **Operating System**: Windows 11
-+ **Python Version**: Anaconda Python 3.9.7
-+ **CUDA Version**: 11.7
+* **Operating System：**Windows 11
+* **Python Version：**Anaconda Python 3.9.7
+* **CUDA Version：**11.7
 
-#### 4.2.2 Workstation
-+ **Operating System**: Windows 10
-+ **Python Version**: Anaconda Python 3.11.4
+#### 4.2.2 Workstation CPU
+* **Operating System：**Windows 10
+* **Python Version：**Anaconda Python 3.11.4
+* **CUDA Version：**12.2
 
-### 4.3 Environment configuration commands
+#### 4.2.3 Workstation GPU
+* **Operating System：**Windows 10
+* **Python Version：**Python 3.12.6
+* **CUDA Version：**12.6
 
- ```cmd
+## 5.Usage
+
+### 5.1 Environment configuration commands
+- For convenience, execute the following command.
+
+```
     pip install -r requirements.txt
 ```
+
+### 5.2 Develop your own model.
+- Start the dataset. A small dataset `./example_test/dataset/` can download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset) as an example.
+
+- Use the `./PNC_pred/model_train.ipynb` to train your own model.
+
+
+## 6.Citation
+
+If you find this repo useful, please cite our paper.
+
+## 7.Contact
+If you have any questions or suggestions, feel free to contact our maintenance team:
+
+Current:
+- Yudie Jianyao (Ph.D. student, jyyd23@mails.tsinghua.edu.cn)
