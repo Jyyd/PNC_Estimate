@@ -10,7 +10,7 @@
 
 # my_project:PNC_Estimate
 
-:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
+:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset].(https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
 
 ## 1.Description
 
@@ -125,7 +125,5 @@ finalcode
 If you find this repo useful, please cite our paper.
 
 ## 7.Contact
-If you have any questions or suggestions, feel free to contact our maintenance team:
-
-Current:
+If you have any questions or suggestions, feel free to contact us:
 - Yudie Jianyao (Ph.D. student, jyyd23@mails.tsinghua.edu.cn)
