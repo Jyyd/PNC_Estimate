@@ -1,9 +1,9 @@
 '''
 Author: jyyd23@mails.tsinghua.edu.cn
 Date: 2024-01-02 14:43:25
-LastEditors: jyyd23@mails.tsinghua.edu.cn
-LastEditTime: 2024-05-09 16:40:44
-FilePath: PNC_pred\pnc_pred.py
+LastEditors: JYYD jyyd23@mails.tsinghua.edu.cn
+LastEditTime: 2024-11-05 00:52:33
+FilePath: \PNC\code\finalcode\PNC_pred\pnc_pred.py
 Description: 
 
 Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
@@ -27,7 +27,7 @@ warnings.filterwarnings("ignore")
 sns.set(rc={'figure.dpi': 300}) # set dpi=300
 
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
+from sklearn.model_selection import train_test_split
 
 from joblib import dump, load
 import concurrent.futures
@@ -64,10 +64,12 @@ def load_and_split_pnc_data():
     pnc_y_train = pncdata2016_2019.iloc[:,2].values
     pnc_x_test = pncdata2020.iloc[:,3:].values
     pnc_y_test = pncdata2020.iloc[:,2].values
+    pnc_x_val, pnc_x_train, pnc_y_val, pnc_y_train = train_test_split(pnc_x_train, pnc_y_train, test_size=0.05, random_state=42)
     # print('--------------------------------------------------')
-    # print(pnc_y_train.shape, pnc_y_test.shape)
-    # print('The train dataset ratio = ', pnc_y_train.shape[0]/ (pnc_y_test.shape[0]+pnc_y_train.shape[0]))
-    # print('The test dataset ratio = ', pnc_y_test.shape[0]/ (pnc_y_test.shape[0]+pnc_y_train.shape[0]))
+    # print(pnc_y_train.shape, pnc_y_val.shape, pnc_y_test.shape)
+    # print('The train dataset ratio = ', pnc_y_train.shape[0]/ (pnc_y_test.shape[0]+pnc_y_train.shape[0]+pnc_y_val.shape[0]))
+    # print('The val dataset ratio = ', pnc_y_val.shape[0]/ (pnc_y_test.shape[0]+pnc_y_train.shape[0]+pnc_y_val.shape[0]))
+    # print('The test dataset ratio = ', pnc_y_test.shape[0]/ (pnc_y_test.shape[0]+pnc_y_train.shape[0]+pnc_y_val.shape[0]))
     return pncdata2016_2019, pncdata2020, pnc_x_train, pnc_x_test, pnc_y_train, pnc_y_test
 
 def get_pnc_scaler():
@@ -79,9 +81,9 @@ def get_pnc_scaler():
     scaler_std = StandardScaler()
     pnc_x_all = np.vstack((pnc_x_train, pnc_x_test))
     # print('Check the pnc data nums: ', pnc_x_all.shape, pnc_x_train.shape[0], pnc_x_test.shape[0])
-    pnc_x_scalar= scaler.fit(x_train)
-    pnc_x_train = scaler.transform(x_train)
-    pnc_x_test = scaler.transform(x_test)
+    pnc_x_scaler = scaler_std.fit(pnc_x_train)
+    pnc_x_train = pnc_x_scaler.transform(pnc_x_train)
+    pnc_x_test = pnc_x_scaler.transform(pnc_x_test)
     # print('Load the pnc scaler!')
     return pnc_x_scaler, pnc_x_train, pnc_x_test, pnc_y_train, pnc_y_test
 
@@ -104,6 +106,54 @@ def load_pnc_joblib(pnc_model_name:str='RandomForest'):
     return pnc_regr
 
 def cams_train_data(pollution_data, pollution:str='NOX', downFlag=True):
+    '''
+    description: 
+    param {*} pollution_data
+    param {str} cams_model_name
+    param {str} pollution
+    param {*} downFlag
+    return {*}
+    '''
+    pollution_data = np.reshape(pollution_data, (-1, 112041))
+    pollution_data = pd.DataFrame(np.transpose(pollution_data))
+    pollution_dataPred = pollution_data.apply(pd.to_numeric,errors="ignore")
+    pollution_dataPred.fillna(0, inplace=True)
+    pollution_dataPred.columns = ['cams', 'radiation', 'temperature', 'precipitation', 'humidity', 'Speed',
+                    'road', 'hour',  'month', 'weekday']
+    if pollution == 'NOX':
+        pollution_dataPred['road_log'] = np.exp(pollution_dataPred['road'])
+    else:
+        pollution_dataPred['road_log'] = (pollution_dataPred['road'])**2
+    pollution_dataPred = pollution_dataPred.drop(['road'],axis=1)
+    pollution_dataPred = pollution_dataPred[['cams', 'radiation', 'temperature', 'precipitation', 'humidity',
+        'Speed', 'road_log','hour', 'month', 'weekday']]
+
+    cams = pollution_data.iloc[:, 0]
+    
+    if downFlag:
+        trainData_model_path = '../out/model/cams_pred_model/'
+        # print(trainData_model_path + cams_model_name + pollution + '_trainedModel.joblib')
+        if pollution == 'NOX':
+            regr_cams_trainData = load(trainData_model_path + pollution + 'lgbexp_trainedModel.joblib')
+        elif pollution == 'NO2':
+            regr_cams_trainData = load(trainData_model_path + pollution + 'gbrsquare_trainedModel.joblib')
+        elif pollution == 'PM10':
+            regr_cams_trainData = load(trainData_model_path + pollution + 'lgbsquare_trainedModel.joblib')
+        elif pollution == 'PM2.5':
+            regr_cams_trainData = load(trainData_model_path + pollution + 'gbrsquare_trainedModel.joblib')
+        others = pollution_data.iloc[:, 1:]
+        cams_XPred = pollution_dataPred.iloc[:, :]
+        _, _, cams_scaler = camstrain.train_data(pollution, describeFlag=False)
+        cams_X_pred_transformed = cams_scaler.transform(cams_XPred)
+        cams_Y_pred = regr_cams_trainData.predict(cams_X_pred_transformed)
+        cams_pred = np.multiply(cams, cams_Y_pred)
+        cams_pred = np.array(cams_pred).reshape(112041, 1)
+        return cams_pred, others
+    else:
+        camsnp = np.array(pollution_data.iloc[:, 0]).reshape(112041, 1)
+        return camsnp
+    
+def cams_train_data_0001(pollution_data, pollution:str='NOX', downFlag=True):
     '''
     description: 
     param {*} pollution_data
