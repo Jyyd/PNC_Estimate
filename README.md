@@ -10,7 +10,7 @@
 
 # my_project:PNC_Estimate
 
-:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` need download from [dataset].(https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset)
+:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` can download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset).
 
 ## 1.Description
 
@@ -74,36 +74,36 @@ finalcode
 ### 4.1 Hardware
 
 #### 4.1.1 Computer
-+ **CPU：**Intel(R) Core(TM) i7-10750H
-+ **GPU：**NVIDIA Geforce GTX 1650 Ti
-+ **RAM：**16GB
++ **CPU：** Intel(R) Core(TM) i7-10750H
++ **GPU：** NVIDIA Geforce GTX 1650 Ti
++ **RAM：** 16GB
 
 #### 4.1.2 Workstation CPU
-+ **CPU：**Intel(R) Xeon(R) Platinum 8383C
-+ **GPU：**NVIDIA Geforce GTX 3090
-+ **RAM：**256GB
++ **CPU：** Intel(R) Xeon(R) Platinum 8383C
++ **GPU：** NVIDIA Geforce GTX 3090
++ **RAM：** 256GB
 
 #### 4.1.3 Workstation GPU
-+ **CPU：**Intel(R) Xeon(R) Platinum 8488C 2.40 GHz
-+ **GPU：**4 x NVIDIA RTX A6000
-+ **RAM：**512GB
++ **CPU：** Intel(R) Xeon(R) Platinum 8488C 2.40 GHz
++ **GPU：** 4 x NVIDIA RTX A6000
++ **RAM：** 512GB
 
 ### 4.1 Software
 
 #### 4.2.1 Computer
-* **Operating System：**Windows 11
-* **Python Version：**Anaconda Python 3.9.7
-* **CUDA Version：**11.7
+* **Operating System：** Windows 11
+* **Python Version：** Anaconda Python 3.9.7
+* **CUDA Version：** 11.7
 
 #### 4.2.2 Workstation CPU
-* **Operating System：**Windows 10
-* **Python Version：**Anaconda Python 3.11.4
-* **CUDA Version：**12.2
+* **Operating System：** Windows 10
+* **Python Version：** Anaconda Python 3.11.4
+* **CUDA Version：** 12.2
 
 #### 4.2.3 Workstation GPU
-* **Operating System：**Windows 10
-* **Python Version：**Python 3.12.6
-* **CUDA Version：**12.6
+* **Operating System：** Windows 10
+* **Python Version：** Python 3.12.6
+* **CUDA Version：** 12.6
 
 ## 5.Usage
 
@@ -125,5 +125,5 @@ finalcode
 If you find this repo useful, please cite our paper.
 
 ## 7.Contact
-If you have any questions or suggestions, feel free to contact us:
+If you have any questions or suggestions, feel free to contact:
 - Yudie Jianyao (Ph.D. student, jyyd23@mails.tsinghua.edu.cn)
