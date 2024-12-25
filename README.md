@@ -123,6 +123,7 @@ finalcode
 ## 6.Citation
 
 If you find this repo useful, please cite our paper.
+Yudie Jianyao, Machine Learning-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles, 10.5281/zenodo.14554168 , 2024.
 
 ## 7.Contact
 If you have any questions or suggestions, feel free to contact:
