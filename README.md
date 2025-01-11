@@ -10,7 +10,7 @@
 
 # my_project:PNC_Estimate
 
-:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` can download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/blob/main/dataset).
+:triangular_flag_on_post: For example on a small dataset that can run on a personal laptop in `example_test`. The `./example_test/dataset/` can download from [dataset](https://huggingface.co/jyyd23/PNC_Estimate/tree/main).
 
 ## 1.Description
 
