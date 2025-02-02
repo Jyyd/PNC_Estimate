@@ -3,7 +3,7 @@
  * @Date: 2024-05-08 19:46:19
  * @LastEditors: JYYD jyyd23@mails.tsinghua.edu.cn
  * @LastEditTime: 2024-11-05 01:21:43
- * @FilePath: \PNC\code\finalcode\README.md
+ * @FilePath: README.md
  * @Description: 
  * 
 -->
@@ -123,7 +123,10 @@ finalcode
 ## 6.Citation
 
 If you find this repo useful, please cite our paper.
-Yudie Jianyao, Machine Learning-Enhanced High-Resolution Exposure Assessment of Ultrafine Particles, 10.5281/zenodo.14554168 , 2024.
+- [1]Jianyao, Y., Yuan, H., Su, G. et al. Machine learning-enhanced high-resolution exposure assessment of ultrafine particles. Nat Commun 16, 1209 (2025). https://doi.org/10.1038/s41467-025-56581-8.
+- [2]Jianyao, Y. & Zhang, X. Machine learning-enhanced high-resolution exposure assessment of ultra fine particles. Zenodo https://doi.org/10.5281/zenodo.14554168 (2024).
+- [3]Jianyao, Y. & Zhang, X. Machine learning-enhanced high-resolution exposure assessment of ultra fine particles (Mini Dataset + Stem-PNC weights). Zenodo https://doi.org/10.5281/zenodo.14634738 (2025).
+
 
 ## 7.Contact
 If you have any questions or suggestions, feel free to contact:
