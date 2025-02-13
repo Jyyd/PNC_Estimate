@@ -128,7 +128,7 @@ If you find this repo useful, please cite our paper.
 - [2]Jianyao, Y. & Zhang, X. Machine learning-enhanced high-resolution exposure assessment of ultra fine particles. Zenodo https://doi.org/10.5281/zenodo.14554168 (2024).
 - [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14554168.svg)](https://doi.org/10.5281/zenodo.14554168 (2024))
 - [3]Jianyao, Y. & Zhang, X. Machine learning-enhanced high-resolution exposure assessment of ultra fine particles (Mini Dataset + Stem-PNC weights). Zenodo https://doi.org/10.5281/zenodo.14634738 (2025).
-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14634738.svg)](https://doi.org/10.5281/zenodo.14634738(2025))
+- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14634738.svg)](https://doi.org/10.5281/zenodo.14634738 (2025))
 
 
 ## 7.Contact
